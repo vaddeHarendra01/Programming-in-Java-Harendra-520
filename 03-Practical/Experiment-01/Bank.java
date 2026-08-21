@@ -2,7 +2,7 @@ import java.util.Scanner;
 public class Bank {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String name = "Harendra";
+        String name = "Raj";
         long accNo = 4596214589L;
         String type = "Savings";
         double balance = 7000;
