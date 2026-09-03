@@ -1,0 +1,55 @@
+import java.util.Scanner;
+
+class Employee {
+    int id;
+    String name;
+    double monthlySalary;
+
+    Employee(int id, String name, double monthlySalary) {
+        this.id = id;
+        this.name = name;
+        this.monthlySalary = monthlySalary;
+    }
+
+    // Inner class
+    class Salary {
+        double calculateAnnualSalary() {
+            return monthlySalary * 12;
+        }
+
+        void displaySalary() {
+            double annualSalary = calculateAnnualSalary();
+
+            System.out.println("Employee ID: " + id);
+            System.out.println("Employee Name: " + name);
+            System.out.println("Monthly Salary: " + monthlySalary);
+            System.out.println("Annual Salary: " + annualSalary);
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter Employee ID: ");
+        int id = sc.nextInt();
+
+        sc.nextLine();
+
+        System.out.print("Enter Employee Name: ");
+        String name = sc.nextLine();
+
+        System.out.print("Enter Monthly Salary: ");
+        double salary = sc.nextDouble();
+
+        Employee emp = new Employee(id, name, salary);
+
+        // Creating object of inner class
+        Employee.Salary sal = emp.new Salary();
+
+        sal.displaySalary();
+
+        sc.close();
+    }
+}
